@@ -16,13 +16,12 @@
                         <label for="">Staff ID</label>
                     </div>
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
+                        <ion-icon name="eye-off-outline" class="toggle"></ion-icon>
                         <input type="password" id="password" class="textbox" name="password" required>
                         <label for="">Password</label>
                     </div>
                     <div class="forget">
-                        <input type="checkbox">
-                        <label for="">Remember Me | <a href="Forget page.html">Forget Password</a></label>
+                        <label for=""><a href="Forget page.html">Forget Password</a></label>
                     </div>
                     <button name="submit" type="submit">Log in</button>
                     <div class="register">
@@ -32,6 +31,24 @@
             </div>
         </div>
     </section>
+    
+    <script>
+        const toggle = document.querySelector(".toggle");
+        const eyeOffIcon = document.querySelector('ion-icon[name="eye-off-outline"]');
+              input = document.querySelector("#password");
+
+              toggle.addEventListener("click", () =>{
+                if(input.type === "password"){
+                    input.type = "text";
+                    // Change the eye icon from eye-off-outline to eye-outline
+                    eyeOffIcon.setAttribute('name', 'eye-outline');
+                }else{
+                    input.type = "password";
+                    // Change the eye icon from eye-outline to eye-off-outline
+                    eyeOffIcon.setAttribute('name', 'eye-off-outline');
+                }
+              })
+    </script>
 
     <script>
         function isvalid(){
